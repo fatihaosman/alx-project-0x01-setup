@@ -27,13 +27,14 @@ const Users: React.FC<{ users: UserProps[] }> = ({ users }) => {
 // Fetch users from JSONPlaceholder
 export async function getStaticProps() {
   const response = await fetch("https://jsonplaceholder.typicode.com/users");
-  const posts = await response.json();
+  const users = await response.json();
 
   return {
     props: {
-      posts,
+      users, // <-- must match the prop used in the component
     },
   };
 }
+
 
 export default Users;
