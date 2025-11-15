@@ -1,16 +1,24 @@
-import { UserData, UserModalProps } from "@/interfaces";
+import { UserProps, UserModalProps } from "@/interfaces";
 import React, { useState } from "react";
 
 const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit }) => {
-  const [user, setUser] = useState<UserData>({
-    name: "",
-    username: "",
-    email: "",
-    address: { street: "", suite: "", city: "", zipcode: "", geo: { lat: "", lng: "" } },
-    phone: "",
-    website: "",
-    company: { name: "", catchPhrase: "", bs: "" },
-  });
+  const [user, setUser] = useState<UserProps>({
+  id: 0, // you can set a temporary id
+  name: "",
+  username: "",
+  email: "",
+  address: {
+    street: "",
+    suite: "",
+    city: "",
+    zipcode: "",
+    geo: { lat: "", lng: "" },
+  },
+  phone: "",
+  website: "",
+  company: { name: "", catchPhrase: "", bs: "" },
+});
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
