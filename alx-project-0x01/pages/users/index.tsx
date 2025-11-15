@@ -3,7 +3,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { UserProps } from "@/interfaces";
 
-const Users: React.FC<{ posts: UserProps[] }> = ({ posts }) => {
+const Users: React.FC<{ users: UserProps[] }> = ({ users }) => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
@@ -13,7 +13,7 @@ const Users: React.FC<{ posts: UserProps[] }> = ({ posts }) => {
           <button className="bg-blue-700 px-4 py-2 rounded-full text-white">Add User</button>
         </div>
         <div className="grid grid-cols-3 gap-4">
-          {posts?.map((user, key) => (
+          {users?.map((user, key) => (
             <UserCard {...user} key={key} />
           ))}
         </div>
@@ -22,6 +22,7 @@ const Users: React.FC<{ posts: UserProps[] }> = ({ posts }) => {
     </div>
   );
 };
+
 
 // Fetch users from JSONPlaceholder
 export async function getStaticProps() {
