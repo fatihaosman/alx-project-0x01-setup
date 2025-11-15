@@ -1,15 +1,24 @@
-import { UserProps } from "@/interfaces";
+import Header from "@/components/layout/Header";
 
-const UserCard: React.FC<UserProps> = ({ name, username, email, phone, website, company }) => {
+const Home: React.FC = () => {
   return (
-    <div className="max-w-md mx-auto my-4 p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-      <h2 className="text-xl font-semibold text-gray-800">{name} ({username})</h2>
-      <p className="text-gray-600 mt-1">Email: {email}</p>
-      <p className="text-gray-600">Phone: {phone}</p>
-      <p className="text-gray-600">Website: {website}</p>
-      <p className="text-gray-600 mt-2 font-medium">Company: {company.name}</p>
+    <div className="flex flex-col h-screen">
+      <Header />
+      <main className="flex-grow flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600">
+        <div className="text-center">
+          <h1 className="text-5xl font-bold text-white">
+            Welcome to our Application!
+          </h1>
+          <p className="mt-4 text-xl text-white">
+           {" We're glad you're here. Explore and enjoy your experience."}
+          </p>
+          <button className="mt-6 px-6 py-3 bg-white text-blue-500 rounded-full font-semibold hover:bg-gray-200 transition">
+            Get Started
+          </button>
+            </div>
+      </main>
     </div>
-  );
-};
+  )
+}
 
-export default UserCard;
+export default Home;
